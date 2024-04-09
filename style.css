@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -82,9 +86,21 @@ header {
 
 #text {
     position: absolute;
+    margin-bottom: 100px;
     font-size: 5em;
-    color: #1b283a;
-    text-shadow: 2px 4px 5px #f9f9f9;
+    animation: jump 2s linear alternate infinite;
+    text-shadow: 5px 4px 11px rgb(0, 0, 0), 0 2px 5px rgb(195, 194, 194);
+}
+
+@keyframes jump {
+    0% {
+        transform: skew(180deg);
+        opacity: 0%;
+    }
+    100% {
+        transform: skew(0px);
+        opacity: 100%;
+    }
 }
 
 .parallax img {
@@ -108,7 +124,7 @@ header {
     position: relative;
     background: #020912;
     padding: 30px 100px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .sec h2 {
@@ -122,9 +138,23 @@ header {
     text-align: justify;
 }
 
+.timeline {
+    padding: 40px 10px;
+}
+.timeline h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 10px;
+    font-size: 40px;
+    color: #333;
+    -webkit-text-stroke: 1px #282828;
+    text-shadow: 0px 4px 4px #282828;
+}
+
 .wrapper {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,6 +245,121 @@ input:checked + label .description {
     background-image: url("./background.png");
 }
 
+.boxes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* border: 20px solid transparent;
+    border-image: url("https://clipart-library.com/2018/heart-border-clipart-19.png")
+        10 round; */
+}
+.box {
+    width: 500px;
+
+    height: 300px;
+    background-image: url("background.png");
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+.box .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0px 20px;
+
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    transition: all 0.5s ease-in-out;
+    border-radius: 20px;
+    background-image: linear-gradient(
+        to left top,
+        rgba(229, 99, 162, 0.368),
+        rgb(159, 32, 125)
+    );
+    opacity: 1;
+    margin-top: 0%;
+    z-index: 100;
+}
+
+.box .text h2 {
+    font-size: bold;
+    color: rgb(46, 44, 44);
+}
+
+.box .text p {
+    font-size: thin;
+    color: rgb(46, 44, 44);
+}
+
+.box:hover .text {
+    margin-top: 100%;
+    opacity: 0%;
+}
+
+.box img {
+    /* position: relative; */
+    height: 300px;
+    width: fit-content;
+}
+
 #map {
     height: 500px;
+}
+
+.timeline {
+    background-image: linear-gradient(to top, rgba(227, 36, 208, 0.905), green);
+}
+
+.game {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    border: 4px solid rgba(165, 83, 83, 0.984);
+    background-image: linear-gradient(
+        to top,
+        rgb(16, 236, 211),
+        rgb(19, 243, 30)
+    );
+}
+
+.game .heart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.game .heart img {
+    height: 100px;
+    position: relative;
+    width: 100px;
+}
+
+.game .heart:hover {
+    animation: big 1s linear forwards;
+}
+
+@keyframes big {
+    0% {
+        opacity: 0%;
+    }
+
+    50% {
+        transform: scale(5);
+        opacity: 100%;
+    }
+    100% {
+        transform: scale(1);
+    }
 }
