@@ -22,12 +22,16 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 100px;
-    /* background: red; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 30px 10px;
+
     z-index: 100;
+}
+
+.navigation {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -86,9 +90,10 @@ header {
 
 #text {
     position: absolute;
+    text-align: center;
     margin-bottom: 100px;
-    font-size: 5em;
-    animation: jump 2s linear alternate infinite;
+    font-size: 50px;
+    animation: jump 1s linear alternate infinite;
     text-shadow: 5px 4px 11px rgb(0, 0, 0), 0 2px 5px rgb(195, 194, 194);
 }
 
@@ -98,7 +103,7 @@ header {
         opacity: 0%;
     }
     100% {
-        transform: skew(0px);
+        transform: skew(0);
         opacity: 100%;
     }
 }
@@ -112,18 +117,18 @@ header {
     height: 100%;
 }
 
-.parallax img#gate-left {
+/* .parallax img#gate-left {
     transform: translateX(-282px);
 }
 
 .parallax img#gate-right {
     transform: translateX(282px);
-}
+} */
 
 .sec {
     position: relative;
     background: #020912;
-    padding: 30px 100px;
+    padding: 30px 20px;
     /* margin-bottom: 10px; */
 }
 
@@ -154,7 +159,7 @@ header {
 .wrapper {
     width: 100%;
     /* height: 100vh; */
-
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,7 +167,8 @@ header {
 .container {
     height: 400px;
     display: flex;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
+    width: 100%;
     justify-content: start;
 }
 
@@ -265,6 +271,7 @@ input:checked + label .description {
     border-radius: 20px;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
+
 .box .text {
     position: absolute;
     top: 0;
@@ -304,6 +311,7 @@ input:checked + label .description {
 
 .box:hover .text {
     margin-top: 100%;
+    transform: scale(0);
     opacity: 0%;
 }
 
@@ -311,6 +319,27 @@ input:checked + label .description {
     /* position: relative; */
     height: 300px;
     width: fit-content;
+}
+
+@media screen and (max-width: 700px) {
+    input:checked + label {
+        width: 100%;
+    }
+
+    .container {
+        height: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+    .card {
+        height: 300px;
+    }
+    .box {
+        width: 100%;
+    }
+    #text {
+        font-size: 30px;
+    }
 }
 
 #map {
@@ -322,15 +351,15 @@ input:checked + label .description {
 }
 
 .game {
-    height: 600px;
-    width: 100%;
-    position: relative;
     border: 4px solid rgba(165, 83, 83, 0.984);
     background-image: linear-gradient(
         to top,
         rgb(16, 236, 211),
         rgb(19, 243, 30)
     );
+    height: 600px;
+    width: 100%;
+    position: relative;
 }
 
 .game .heart {
