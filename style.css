@@ -84,7 +84,7 @@ header {
     height: 100vh;
     width: 100vw;
     /* background: url("background.png"); */
-    background: url("./img2.jpg");
+    background: url("./img10.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -94,8 +94,10 @@ header {
     margin-bottom: 100px;
     text-align: center;
     font-size: 5em;
+    font-family: 'Brush Script MT', cursive;
     animation: jump 2s linear alternate infinite;
-    text-shadow: 5px 4px 11px rgb(0, 0, 0), 0 2px 5px rgb(195, 194, 194);
+    color: rgb(63, 9, 9);
+    text-shadow: 5px 4px 11px rgb(151, 89, 89), 0 2px 5px rgb(223, 57, 57);
 }
 
 @keyframes jump {
@@ -120,16 +122,42 @@ header {
 }
 
 .parallax img#gate-left {
+    display: flex;
+    animation: gateMove 4s alternate forwards;
+    /* padding-right: 70px; */
     /* transform: translateX(-282px); */
+    left: 10px;
+}
+
+@keyframes gateMove {
+    100%{
+        opacity: 0;
+        left: 0;
+        padding-right: 200px;
+    }
+    
 }
 
 .parallax img#gate-right {
+    display: flex;
+    right: 50px;
+    /* padding-left: 70px; */
+    animation: gate2 4s alternate forwards;
+    /* right: 0; */
     /* transform: translateX(282px); */
+}
+
+@keyframes gate2 {
+    100%{
+        padding-left: 200px;
+        right: 0;
+        opacity: 0;
+    }
 }
 
 .sec {
     position: relative;
-    background-image: url("https://www.zmo.ai/wp-content/uploads/2023/09/black-wallpaper-25-min.jpg");
+    background-image: linear-gradient(black , rgba(255, 0, 0, 0),rgb(132, 92, 128)),url("https://www.zmo.ai/wp-content/uploads/2023/09/black-wallpaper-25-min.jpg");
     /* height: 100vh; */
     width: 100vw;
     padding: 30px 10px;
@@ -174,7 +202,7 @@ header {
     display: flex;
     /* flex-wrap: nowrap; */
     width: 100%;
-    justify-content: start;
+    justify-content: center;
 }
 
 .card {
@@ -243,31 +271,45 @@ input:checked + label .description {
 }
 
 .card[for="c1"] {
-    background-image: url("./img1.jpg");
+    background-image: url("./old4.jpg");
 }
 
 .card[for="c2"] {
-    background-image: url("./img1.jpg");
+    background-image: url("./old2.jpg");
 }
 .card[for="c3"] {
-    background-image: url("./img1.jpg");
+    background-image: url("./old3.jpg");
 }
 .card[for="c4"] {
-    background-image: url("./img1.jpg");
+    background-image: url("./old1.jpg");
 }
 
 .card[for="cc1"] {
-    background-image: url("./img4.jpg");
+    background-image: url("./img33.jpg");
 }
 
 .card[for="cc2"] {
-    background-image: url("./img4.jpg");
+    background-image: url("./img2.jpg");
 }
 .card[for="cc3"] {
-    background-image: url("./img4.jpg");
+    background-image: url("./img1.jpg");
 }
 .card[for="cc4"] {
-    background-image: url("./img4.jpg");
+    background-image: url("./img28.jpg");
+}
+
+.card[for="ccc1"] {
+    background-image: url("./img39.jpg");
+}
+
+.card[for="ccc2"] {
+    background-image: url("./img3.jpg");
+}
+.card[for="ccc3"] {
+    background-image: url("./img40.jpg");
+}
+.card[for="ccc4"] {
+    background-image: url("./img5.jpg");
 }
 
 .boxes {
@@ -276,19 +318,25 @@ input:checked + label .description {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    /* border: 20px solid transparent;
-    border-image: url("https://clipart-library.com/2018/heart-border-clipart-19.png")
-        10 round; */
 }
 .box {
     width: 500px;
 
     height: 300px;
-    background-image: url("img3.jpg");
+    /* background-image: url("1.jpg"); */
     background-size: cover;
     position: relative;
     border-radius: 20px;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+#b1{
+    background-image: url("4.jpg");
+}
+#b2{
+    background-image: url("2.jpg");
+}
+#b3{
+    background-image: url("1.jpg");
 }
 .box .text {
     position: absolute;
@@ -346,9 +394,9 @@ input:checked + label .description {
 .timeline {
     background-image: linear-gradient(
         to top,
-        rgba(223, 37, 37, 0.905),
+        rgba(223, 37, 37, 0.74),
         rgb(132, 92, 128)
-    );
+    ),url("https://i.pinimg.com/736x/e8/e9/34/e8e934e3e70d66d662fc915f1c2627ac.jpg");
 }
 
 .game {
@@ -376,6 +424,12 @@ input:checked + label .description {
     height: 100px;
     position: relative;
     width: 100px;
+}
+
+.game .info {
+    color: rgb(215, 135, 135);
+    position: absolute;
+    right: 5%;;
 }
 
 @media screen and (max-width: 700px) {
@@ -408,12 +462,13 @@ input:checked + label .description {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff758f;
+    background-image:linear-gradient(to top,rgba(223, 37, 37, 0.646),rgba(132, 92, 128, 0.598)) ,
+    url("https://wallpapers.com/images/featured/background-mhdoyguhq3skloxt.jpg");
 }
 
 .valentines-day-card {
     position: relative;
-    width: 400px;
+    width: 450px;
     height: 300px;
     background-color: #ff8fa3;
     overflow: hidden;
@@ -586,7 +641,7 @@ input:checked + label .description {
     font-family: "Pacifico", cursive;
     line-height: 1;
     text-align: center;
-    width: 380px;
+    width: 400px;
     left: 10px;
     z-index: 3;
     top: 320px;
@@ -605,7 +660,7 @@ input:checked + label .description {
 }
 
 .text-valentine:hover:before {
-    content: "Remember not to eat too much candy—you're sweet enough already.";
+    content: "Cheers to 22 years of togeatherness “To me, you are perfect.” ";
     font-size: 25px;
 }
 

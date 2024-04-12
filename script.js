@@ -1,6 +1,7 @@
 const text = document.getElementById("text");
 const gateLeft = document.getElementById("gate-left");
 const gateRight = document.getElementById("gate-right");
+const info = document.getElementById("info")
 
 // window.addEventListener("scroll", () => {
 //     let value = window.scrollY;
@@ -23,6 +24,7 @@ game.addEventListener("click", () => {
 
         function s() {
             target.style.transform = `scale(1)`;
+            info.style.opacity = "1";
         }
 
         clearInterval(timer);
@@ -34,6 +36,7 @@ game.addEventListener("click", () => {
 
     function jump() {
         target.style.transform = `scale(1)`;
+        info.style.opacity = "0";
 
         let parentWidth = game.clientWidth;
         let parentHeight = game.clientHeight;
